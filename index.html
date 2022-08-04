@@ -117,19 +117,33 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
                         <div class="col-xxl-4 col-xl-5 col-md-6">
                             <div class="send-money">
                                 <form action="#">
                                     <div class="currency-area">
                                         <div class="left-side">
                                             <span class="mdr">Вы отдаете</span>
-                                            <input type="text" class="xlr" placeholder="Enter Amount" value="1000">
+                                            <input type="text" class="xlr" placeholder="Enter Amount" value="1000" id="includesMoney">
                                         </div>
                                         <div class="right-side">
-                                            <select>
-                                                <option value="1">USD</option>
-                                                <option value="2">GBP</option>
-                                                <option value="3">AUS</option>
+                                            <select id="banks_list_from_where_we_transfer_money">
+                                                <option class="banks_from_where_we_transfer_money" value="1">Наличные USD РФ</option>
+                                                <option class="banks_from_where_we_transfer_money" value="1">Наличные RUB РФ</option>
+                                                <option class="banks_from_where_we_transfer_money" value="1">Наличные EUR РФ</option>
+                                                <option class="banks_from_where_we_transfer_money" value="2">Наличные AED Дубаи</option>
+                                                <option class="banks_from_where_we_transfer_money" value="2">Наличные USD Дубаи</option>
+                                                <option class="banks_from_where_we_transfer_money" value="3">Тинькофф RUB </option>
+                                                <option class="banks_from_where_we_transfer_money" value="3">Альфабанк RUB </option>
+                                                <option class="banks_from_where_we_transfer_money" value="3">Сбербанк RUB </option>
+                                                <option class="banks_from_where_we_transfer_money" value="3">МИР RUB </option>
+                                                <option class="banks_from_where_we_transfer_money" value="3">Любой банк RUB </option>
+                                                <option class="banks_from_where_we_transfer_money" value="4">Юрлицо RUB</option>
+                                                <option class="banks_from_where_we_transfer_money" value="4">Юрлицо USD</option>
                                             </select>
                                         </div>
                                     </div>
@@ -142,7 +156,7 @@
                                             <div class="single-area d-flex align-items-center">
                                                 <div class="left-area">
                                                     <i class="fas fa-minus"></i>
-                                                    <span class="mdr">10.04 USD</span>
+                                                    <span class="mdr" id="commission">10.04 USD</span>
                                                 </div>
                                                 <div class="right-area">
                                                     <span class="mdr">Комиссия</span>
@@ -151,7 +165,7 @@
                                             <div class="single-area d-flex align-items-center">
                                                 <div class="left-area">
                                                     <i class="fas fa-times"></i>
-                                                    <span class="mdr">1.3947</span>
+                                                    <span class="mdr" id="conversionКate">1.3947</span>
                                                 </div>
                                                 <div class="right-area">
                                                     <span class="mdr highlight">Курс конверсии</span>
@@ -162,13 +176,16 @@
                                     <div class="currency-area">
                                         <div class="left-side">
                                             <span class="mdr">Вы получаете</span>
-                                            <h5>1,380.69</h5>
+                                            <h5 id="goingOutMoney">1,380.69</h5>
                                         </div>
                                         <div class="right-side recipient">
-                                            <select>
-                                                <option value="1">AUS</option>
-                                                <option value="2">USD</option>
-                                                <option value="3">GBP</option>
+                                            <select id="returnFinalValue">
+                                                <option value="1" id="returnFinalOne">Наличные AED Дубаи</option>
+                                                <option value="2" id="returnFinalTwo">Наличные USD Дубаи</option>
+                                                <option value="3" id="returnFinalThree">Любой банк AED</option>
+                                                <option value="4" id="returnFinalFour">Юрлицо AED</option>
+                                                <option value="5" id="returnFinalFive">Юрлицо USD</option>
+                                                <option value="6" id="returnFinalSix">Юрлицо USD</option>
                                             </select>
                                         </div>
                                     </div>
@@ -178,6 +195,15 @@
                                 </form>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+                        
                     </div>
                 </div>
             </div>
@@ -789,6 +815,7 @@
     <script src="assets/js/plugin/wow.min.js"></script>
     <script src="assets/js/plugin/plugin.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/calculation.js"></script>
 </body>
 
 </html>
