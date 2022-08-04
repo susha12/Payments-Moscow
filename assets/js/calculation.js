@@ -29,6 +29,8 @@ const render = (tag, properties = null, children = null) => {
   
   // находим value списака предлогаемых банков и вкладываем в переменную
   const banksListTransfersMoney = document.getElementById("banks_list_from_where_we_transfer_money");
+
+  banksListTransfersMoney.addEventListener("change", PlayСonversion);
   
   // находим списак предлогаемых банков и вкладываем в переменную
   const banksTransfersMoney = document.getElementsByClassName("banks_from_where_we_transfer_money");
@@ -47,8 +49,9 @@ const render = (tag, properties = null, children = null) => {
   
   // при клике на входяший инпут запускается функцыя которая подставляет значения исходяших банков а также комисионные и валюту
   let arrayVariable = "01";
-  includesMoney.addEventListener("input", PlayСonversion);
-  
+  // includesMoney.addEventListener("input", PlayСonversion);
+
+
     
   // массывы которые показаны при выборе
   const GroupOne = ['Наличные AED Дубаи','Наличные USD Дубаи','Любой банк AED','Юрлицо AED','Юрлицо USD'];
@@ -67,47 +70,46 @@ const render = (tag, properties = null, children = null) => {
   let returnFinalFive = document.getElementById("returnFinalFive");
   let returnFinalSix = document.getElementById("returnFinalSix");
   
-  returnFinalSix.style.display = "none";
-  returnFinalValue.style.border = "2px solid red";
-  returnFinalValue.style.marginTop = "50px";
-  returnFinalValue.style.display = "flex";
+  
+
   function PlayСonversion() {
-  console.log("yes")
+
     // определяем на каком масиве будем работать
     if(banksListTransfersMoney.value == 1){
       returnFinalOne.innerHTML = GroupOne[0];
       returnFinalTwo.innerHTML = GroupOne[1];
+      returnFinalThree.style.display = "flex";
       returnFinalThree.innerHTML = GroupOne[2];
+      returnFinalFour.style.display = "flex";
       returnFinalFour.innerHTML = GroupOne[3];
+      returnFinalFive.style.display = "flex";
       returnFinalFive.innerHTML = GroupOne[4];
       returnFinalSix.style.display = "none";
       console.log("01")
-    //   returnFinalSix.remove()
     }
     else if(banksListTransfersMoney.value == 2){
       returnFinalOne.innerHTML = GroupTwo[0];
       returnFinalTwo.innerHTML = GroupTwo[1];
+      returnFinalThree.style.display = "flex";
       returnFinalThree.innerHTML = GroupTwo[2];
+      returnFinalFour.style.display = "flex";
       returnFinalFour.innerHTML = GroupTwo[3];
+      returnFinalFive.style.display = "flex";
       returnFinalFive.innerHTML = GroupTwo[4];
-      returnFinalSix.innerHTML = GroupTwo[5];
       returnFinalSix.style.display = "flex";
+      returnFinalSix.innerHTML = GroupTwo[5];
       console.log("02")
     }
     else if(banksListTransfersMoney.value == 3){
       returnFinalOne.innerHTML = GroupThree[0];
       returnFinalTwo.innerHTML = GroupThree[1];
+      returnFinalThree.style.display = "flex";
       returnFinalThree.innerHTML = GroupThree[2];
       returnFinalFour.style.display = "none";
       returnFinalFive.style.display = "none";
       returnFinalSix.style.display = "none";
       console.log("03")
-    //   returnFinalOne.innerHTML = GroupFour[0];
-    //   returnFinalTwo.innerHTML = GroupFour[1];
-    //   returnFinalThree.remove()
-    //   returnFinalFour.remove()
-    //   returnFinalFive.remove()
-    //   returnFinalSix.remove()
+
     }
     else if(banksListTransfersMoney.value == 4){
       returnFinalOne.innerHTML = GroupFour[0];
@@ -117,12 +119,6 @@ const render = (tag, properties = null, children = null) => {
       returnFinalFive.style.display = "none";
       returnFinalSix.style.display = "none";
       console.log("04")
-    //   returnFinalOne.innerHTML = GroupFour[0];
-    //   returnFinalTwo.innerHTML = GroupFour[1];
-    //   returnFinalThree.remove()
-    //   returnFinalFour.remove()
-    //   returnFinalFive.remove()
-    //   returnFinalSix.remove()
     }
   }
   

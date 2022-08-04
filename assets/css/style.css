@@ -3656,3 +3656,14 @@ label {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+.right-side>.nice-select{
+  display: none;
+}
+
+#banks_list_from_where_we_transfer_money{
+  display: block;
+}
+#banks_from_where_we_transfer_money{
+  display: block;
+}
