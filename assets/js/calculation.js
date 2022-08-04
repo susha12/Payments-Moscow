@@ -5,28 +5,7 @@
 
 
 // тут будет логика конвертации валюты и добавлении элементов
-const render = (tag, properties = null, children = null) => {
-    const element = document.createElement(tag);
-  
-    if (properties !== null) {
-      for (let [key, value] of Object.entries(properties)) {
-        if (key in element) {
-          element[key] = value;
-        } else {
-          element.setAttribute(key, value);
-        }
-      }
-    }
-    if (children !== null) {
-      if (children instanceof Array) {
-        element.append(...children);
-      } else {
-        element.append(children);
-      }
-    }
-    return element;
-  };
-  
+
   // находим value списака предлогаемых банков и вкладываем в переменную
   const banksListTransfersMoney = document.getElementById("banks_list_from_where_we_transfer_money");
 
