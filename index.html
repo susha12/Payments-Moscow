@@ -129,22 +129,22 @@
                                     <div class="currency-area">
                                         <div class="left-side">
                                             <span class="mdr">Вы отдаете</span>
-                                            <input type="text" class="xlr" placeholder="Enter Amount" value="1000" id="includesMoney">
+                                            <input type="text" class="xlr" placeholder="Enter Amount" value="1000" id="includesMoney" maxlength="7">
                                         </div>
                                         <div class="right-side">
                                             <select id="banks_list_from_where_we_transfer_money">
-                                                <option class="banks_from_where_we_transfer_money" value="1">Наличные USD РФ</option>
-                                                <option class="banks_from_where_we_transfer_money" value="1">Наличные RUB РФ</option>
-                                                <option class="banks_from_where_we_transfer_money" value="1">Наличные EUR РФ</option>
-                                                <option class="banks_from_where_we_transfer_money" value="2">Наличные AED Дубаи</option>
-                                                <option class="banks_from_where_we_transfer_money" value="2">Наличные USD Дубаи</option>
-                                                <option class="banks_from_where_we_transfer_money" value="3">Тинькофф RUB </option>
-                                                <option class="banks_from_where_we_transfer_money" value="3">Альфабанк RUB </option>
-                                                <option class="banks_from_where_we_transfer_money" value="3">Сбербанк RUB </option>
-                                                <option class="banks_from_where_we_transfer_money" value="3">МИР RUB </option>
-                                                <option class="banks_from_where_we_transfer_money" value="3">Любой банк RUB </option>
-                                                <option class="banks_from_where_we_transfer_money" value="4">Юрлицо RUB</option>
-                                                <option class="banks_from_where_we_transfer_money" value="4">Юрлицо USD</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Наличные USD РФ">Наличные USD РФ</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Наличные RUB РФ">Наличные RUB РФ</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Наличные EUR РФ">Наличные EUR РФ</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Наличные AED Дубаи">Наличные AED Дубаи</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Наличные USD Дубаи">Наличные USD Дубаи</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Тинькофф RUB">Тинькофф RUB</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Альфабанк RUB">Альфабанк RUB</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Сбербанк RUB">Сбербанк RUB</option>
+                                                <option class="banks_from_where_we_transfer_money" value="МИР RUB">МИР RUB</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Любой банк RUB">Любой банк RUB</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Юрлицо RUB">Юрлицо RUB</option>
+                                                <option class="banks_from_where_we_transfer_money" value="Юрлицо USD">Юрлицо USD</option>
                                             </select>
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                                             <div class="single-area d-flex align-items-center">
                                                 <div class="left-area">
                                                     <i class="fas fa-minus"></i>
-                                                    <span class="mdr" id="commission">10.04 USD</span>
+                                                    <span class="mdr" id="commission">30.00 USA</span>
                                                 </div>
                                                 <div class="right-area">
                                                     <span class="mdr">Комиссия</span>
@@ -166,7 +166,7 @@
                                             <div class="single-area d-flex align-items-center">
                                                 <div class="left-area">
                                                     <i class="fas fa-times"></i>
-                                                    <span class="mdr" id="conversionКate">1.3947</span>
+                                                    <span class="mdr" id="conversionКate">3.6670</span>
                                                 </div>
                                                 <div class="right-area">
                                                     <span class="mdr highlight">Курс конверсии</span>
@@ -177,7 +177,7 @@
                                     <div class="currency-area">
                                         <div class="left-side">
                                             <span class="mdr">Вы получаете</span>
-                                            <h5 id="goingOutMoney">1,380.69</h5>
+                                            <h5 id="goingOutMoney">3593.66</h5>
                                         </div>
                                         <div class="right-side recipient">
                                             <select id="returnFinalValue" style="display: block !important;">
@@ -191,7 +191,7 @@
                                         </div>
                                     </div>
                                     <div class="btn-area mt-40">
-                                        <a href="javascript:void(0)" class="cmn-btn w-100">Обменять</a>
+                                        <a href="javascript:void(0)" class="cmn-btn w-100" id="exchangeButton">Обменять</a>
                                     </div>
                                 </form>
                             </div>
@@ -817,6 +817,7 @@
     <script src="assets/js/plugin/plugin.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/calculation.js"></script>
+    <script src="assets/js/commissions.js"></script>
 </body>
 
 </html>
