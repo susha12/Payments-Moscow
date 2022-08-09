@@ -19,14 +19,6 @@ option.banks_from_where_we_transfer_money{
     min-width: 500px !important;
     padding: 0 px 10px;
 }
-/* #returnFinalValue::after{
-    content: none !important;
-    border-bottom: 2px solid #0c266c;
-    border-right: 2px solid #0c266c;
-    height: 13px;
-    right: 18px;
-    width: 53px;
-} */
 #banks_list_from_where_we_transfer_money{
     display: flex !important;
     border: 2px solid #0c266c76;
@@ -75,7 +67,3 @@ option.banks_from_where_we_transfer_money{
         left: 15px;
     }
 }
-
-
-
-/* // $txt .= '<b>Количество усиленных держателей:</b> ' . $strCount . ' (Стоимость: ' . $_POST['total_price'] . ')<br>'; */
