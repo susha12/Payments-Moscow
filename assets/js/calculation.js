@@ -58,6 +58,26 @@ const GroupThree = [
 
 const GroupFour = ["Юрлицо AED", "Юрлицо USD"];
 
+const element01 = `<option value="1" id="returnFinalOne" >${GroupOne[0]}</option>
+<option value="2" id="returnFinalTwo">${GroupOne[1]}</option>
+<option value="3" id="returnFinalThree">${GroupOne[2]}</option>
+<option value="4" id="returnFinalFour">${GroupOne[3]}</option>
+<option value="5" id="returnFinalFive">${GroupOne[4]}</option>`;
+
+const element02 = `<option value="1" id="returnFinalOne" >${GroupTwo[0]}</option>
+<option value="2" id="returnFinalTwo">${GroupTwo[1]}</option>
+<option value="3" id="returnFinalThree">${GroupTwo[2]}</option>
+<option value="4" id="returnFinalFour">${GroupTwo[3]}</option>
+<option value="5" id="returnFinalFive">${GroupTwo[4]}</option>
+<option value="5" id="returnFinalSix">${GroupTwo[5]}</option>`;
+
+const element03 = `<option value="1" id="returnFinalOne" >${GroupThree[0]}</option>
+<option value="2" id="returnFinalTwo">${GroupThree[1]}</option>
+<option value="3" id="returnFinalThree">${GroupThree[2]}</option>`;
+
+const element04 = `<option value="1" id="returnFinalOne" >${GroupFour[0]}</option>
+<option value="2" id="returnFinalTwo">${GroupFour[1]}</option>`;
+
 // переменные выводяшего списка
 let returnFinalOne = document.getElementById("returnFinalOne");
 let returnFinalTwo = document.getElementById("returnFinalTwo");
@@ -65,9 +85,8 @@ let returnFinalThree = document.getElementById("returnFinalThree");
 let returnFinalFour = document.getElementById("returnFinalFour");
 let returnFinalFive = document.getElementById("returnFinalFive");
 let returnFinalSix = document.getElementById("returnFinalSix");
-
+returnFinalValue.innerHTML = element01;
 function PlayConversion() {
-  returnFinalValue.value = returnFinalOne.value;
   finalSettlement();
   // определяем на каком масиве будем работать
   if (
@@ -75,53 +94,25 @@ function PlayConversion() {
     banksListTransfersMoney.value === "Наличные USD РФ" ||
     banksListTransfersMoney.value === "Наличные EUR РФ"
   ) {
-    returnFinalOne.innerHTML = GroupOne[0];
-    returnFinalTwo.innerHTML = GroupOne[1];
-    returnFinalThree.style.display = "flex";
-    returnFinalThree.innerHTML = GroupOne[2];
-    returnFinalFour.style.display = "flex";
-    returnFinalFour.innerHTML = GroupOne[3];
-    returnFinalFive.style.display = "flex";
-    returnFinalFive.innerHTML = GroupOne[4];
-    returnFinalSix.style.display = "none";
+    returnFinalValue.innerHTML = element01;
   } else if (
     banksListTransfersMoney.value === "Наличные USD Дубаи" ||
     banksListTransfersMoney.value === "Наличные AED Дубаи"
   ) {
-    returnFinalOne.innerHTML = GroupTwo[0];
-    returnFinalTwo.innerHTML = GroupTwo[1];
-    returnFinalThree.style.display = "flex";
-    returnFinalThree.innerHTML = GroupTwo[2];
-    returnFinalFour.style.display = "flex";
-    returnFinalFour.innerHTML = GroupTwo[3];
-    returnFinalFive.style.display = "flex";
-    returnFinalFive.innerHTML = GroupTwo[4];
-    returnFinalSix.style.display = "flex";
-    returnFinalSix.innerHTML = GroupTwo[5];
+    returnFinalValue.innerHTML = element02;
   } else if (
     banksListTransfersMoney.value === "Тинькофф RUB" ||
     banksListTransfersMoney.value === "Альфабанк RUB" ||
     banksListTransfersMoney.value === "Сбербанк RUB" ||
-    banksListTransfersMoney.value == "МИР RUB" ||
+    banksListTransfersMoney.value === "МИР RUB" ||
     banksListTransfersMoney.value === "Любой банк RUB"
   ) {
-    returnFinalOne.innerHTML = GroupThree[0];
-    returnFinalTwo.innerHTML = GroupThree[1];
-    returnFinalThree.style.display = "flex";
-    returnFinalThree.innerHTML = GroupThree[2];
-    returnFinalFour.style.display = "none";
-    returnFinalFive.style.display = "none";
-    returnFinalSix.style.display = "none";
+    returnFinalValue.innerHTML = element03;
   } else if (
     banksListTransfersMoney.value === "Юрлицо RUB" ||
     banksListTransfersMoney.value === "Юрлицо USD"
   ) {
-    returnFinalOne.innerHTML = GroupFour[0];
-    returnFinalTwo.innerHTML = GroupFour[1];
-    returnFinalThree.style.display = "none";
-    returnFinalFour.style.display = "none";
-    returnFinalFive.style.display = "none";
-    returnFinalSix.style.display = "none";
+    returnFinalValue.innerHTML = element04;
   }
 }
 
