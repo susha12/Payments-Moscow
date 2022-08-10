@@ -5,7 +5,7 @@ const banksListTransfersMoney = document.getElementById(
   "banks_list_from_where_we_transfer_money"
 );
 
-banksListTransfersMoney.addEventListener("change", PlayСonversion);
+banksListTransfersMoney.addEventListener("change", PlayConversion);
 
 // находим списак предлогаемых банков и вкладываем в переменную
 const banksTransfersMoney = document.getElementsByClassName(
@@ -24,7 +24,7 @@ let includesMoney = document.getElementById("includesMoney");
 // при клике на входяший инпут обнуляем бокс ввода,комисию,курс конвертации и бокс получения
 includesMoney.onclick = () => {
   includesMoney.value = "";
-  conversionКate.innerHTML = "";
+  conversionKate.innerHTML = "";
   commission.innerHTML = "";
   goingOutMoney.innerHTML = "";
 };
@@ -66,7 +66,7 @@ let returnFinalFour = document.getElementById("returnFinalFour");
 let returnFinalFive = document.getElementById("returnFinalFive");
 let returnFinalSix = document.getElementById("returnFinalSix");
 
-function PlayСonversion() {
+function PlayConversion() {
   returnFinalValue.value = returnFinalOne.value;
   finalSettlement();
   // определяем на каком масиве будем работать
@@ -129,7 +129,7 @@ function PlayСonversion() {
 let commission = document.getElementById("commission");
 
 // box курс конверсии
-let conversionКate = document.getElementById("conversionКate");
+let conversionKate = document.getElementById("conversionKate");
 
 // input где показан расчет конвертации
 let goingOutMoney = document.getElementById("goingOutMoney");
@@ -187,13 +187,13 @@ function finalSettlement() {
   // проверка вводимой цыфры больше 500 и менше 10000
   if (commissions === 1) {
     commission.innerHTML = "";
-    conversionКate.innerHTML = "";
+    conversionKate.innerHTML = "";
     // ошибку делаем в красный цвет
     goingOutMoney.style.color = "red";
     goingOutMoney.innerHTML = "Ошибка";
   } else {
     // курс конверсии
-    conversionКate.innerHTML = "";
+    conversionKate.innerHTML = "";
 
     // box комиссия
     let valueComisions = (includesMoney.value / 100) * commissions;
@@ -246,7 +246,7 @@ function finalSettlement() {
       (banksListTransfersMoney.value === "Юрлицо USD" &&
         returnFinalValue.value === "1")
     ) {
-      conversionКate.innerHTML = OneUsdInAed.toFixed(4);
+      conversionKate.innerHTML = OneUsdInAed.toFixed(4);
       let endResult =
         (includesMoney.value - (includesMoney.value / 100) * commissions) *
         OneUsdInAed;
@@ -263,7 +263,7 @@ function finalSettlement() {
       (banksListTransfersMoney.value === "Юрлицо USD" &&
         returnFinalValue.value === "2")
     ) {
-      conversionКate.innerHTML = "1";
+      conversionKate.innerHTML = "1";
       let endResult =
         includesMoney.value - (includesMoney.value / 100) * commissions;
       goingOutMoney.innerHTML = endResult.toFixed(2);
@@ -301,7 +301,7 @@ function finalSettlement() {
       (banksListTransfersMoney.value === "Юрлицо RUB" &&
         returnFinalValue.value === "1")
     ) {
-      conversionКate.innerHTML = OneRubInAed.toFixed(4);
+      conversionKate.innerHTML = OneRubInAed.toFixed(4);
       let endResult =
         (includesMoney.value - (includesMoney.value / 100) * commissions) *
         OneRubInAed;
@@ -328,7 +328,7 @@ function finalSettlement() {
       (banksListTransfersMoney.value === "Юрлицо RUB" &&
         returnFinalValue.value === "2")
     ) {
-      conversionКate.innerHTML = OneRubInAed.toFixed(4);
+      conversionKate.innerHTML = OneRubInAed.toFixed(4);
       let endResult =
         (includesMoney.value - (includesMoney.value / 100) * commissions) *
         OneRubInUsd;
@@ -345,7 +345,7 @@ function finalSettlement() {
       (banksListTransfersMoney.value === "Наличные EUR РФ" &&
         returnFinalValue.value === "4")
     ) {
-      conversionКate.innerHTML = OneEurInAed.toFixed(4);
+      conversionKate.innerHTML = OneEurInAed.toFixed(4);
       let endResult =
         (includesMoney.value - (includesMoney.value / 100) * commissions) *
         OneEurInAed.toFixed(4);
@@ -360,7 +360,7 @@ function finalSettlement() {
       (banksListTransfersMoney.value === "Наличные EUR РФ" &&
         returnFinalValue.value === "5")
     ) {
-      conversionКate.innerHTML = OneEurInUsd;
+      conversionKate.innerHTML = OneEurInUsd;
       let endResult =
         (includesMoney.value - (includesMoney.value / 100) * commissions) *
         OneEurInUsd;
@@ -370,7 +370,7 @@ function finalSettlement() {
 
     // 4-1 4-2 4-3 4-4 4-5 4-6 AED in RUB
     else if (banksListTransfersMoney.value === "Наличные AED Дубаи") {
-      conversionКate.innerHTML = OneAedInRub.toFixed(4);
+      conversionKate.innerHTML = OneAedInRub.toFixed(4);
       let endResult =
         (includesMoney.value - (includesMoney.value / 100) * commissions) *
         OneAedInRub.toFixed(4);
@@ -380,7 +380,7 @@ function finalSettlement() {
 
     // 5-1 5-2 5-3 5-4 5-5 5-6 AED in RUB
     else if (banksListTransfersMoney.value === "Наличные USD Дубаи") {
-      conversionКate.innerHTML = OneUsdInRub;
+      conversionKate.innerHTML = OneUsdInRub;
       let endResult =
         (includesMoney.value - (includesMoney.value / 100) * commissions) *
         OneUsdInRub;

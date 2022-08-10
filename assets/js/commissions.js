@@ -10,23 +10,23 @@ let minLimitOfTwoAndHalfPercent = 1001;
 let maxLimitOfTwoAndHalfPercent = 5000;
 // минимальная граница с двух процентов
 let minLimitOfTwoPercent = 5001;
+
 function startplayComissions() {
-  if (
-    includesMoney.value >= minLimitOfThreePercent &&
-    includesMoney.value <= maxLimitOfThreePercent
-  ) {
-    commissions = 3;
-  } else if (
-    includesMoney.value >= minLimitOfTwoAndHalfPercent &&
-    includesMoney.value <= maxLimitOfTwoAndHalfPercent
-  ) {
-    commissions = 2.5;
-  } else if (includesMoney.value >= minLimitOfTwoPercent) {
-    commissions = 2;
-  } else if (includesMoney.value < minLimitOfThreePercent) {
-    // если ввел менше 500 единиц выводится ошибка
-    commissions = 1;
-  }
-  console.log("commissions = " + commissions);
+	if (
+		includesMoney.value >= minLimitOfThreePercent &&
+		includesMoney.value <= maxLimitOfThreePercent
+	) {
+		commissions = 3;
+	} else if (
+		includesMoney.value >= minLimitOfTwoAndHalfPercent &&
+		includesMoney.value <= maxLimitOfTwoAndHalfPercent
+	) {
+		commissions = 2.5;
+	} else if (includesMoney.value >= minLimitOfTwoPercent) {
+		commissions = 2;
+	} else if (includesMoney.value < minLimitOfThreePercent) {
+		// если ввел менше 500 единиц выводится ошибка
+		commissions = 1;
+	}
 }
 startplayComissions();
