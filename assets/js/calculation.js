@@ -7,8 +7,6 @@ const banksListTransfersMoney = document.getElementById(
 
 banksListTransfersMoney.addEventListener("change", PlayСonversion);
 
-
-
 // находим списак предлогаемых банков и вкладываем в переменную
 const banksTransfersMoney = document.getElementsByClassName(
   "banks_from_where_we_transfer_money"
@@ -33,7 +31,6 @@ includesMoney.onclick = () => {
 
 // при клике на входяший инпут запускается функцыя которая подставляет значения исходяших банков а также комисионные и валюту
 let arrayVariable = "01";
-
 
 // массывы которые показаны при выборе
 const GroupOne = [
@@ -63,8 +60,6 @@ const GroupFour = [
   "Юрлицо AED", 
   "Юрлицо USD"
 ];
-
-
 
 
 // переменные выводяшего списка
@@ -127,7 +122,6 @@ let conversionКate = document.getElementById("conversionКate");
 // input где показан расчет конвертации
 let goingOutMoney = document.getElementById("goingOutMoney");
 
-
 // по курсам валют RUB/AED
 let CoursAED = 3.667;
 // по курсам валют RUB/USD
@@ -160,7 +154,6 @@ function startCoursEUR() {
     });
 }
 startCoursEUR();
-
 
 
 // собираем работаюший код
@@ -217,16 +210,13 @@ function finalSettlement(){
   goingOutMoney.style.color = "#0c266c";
   goingOutMoney.innerHTML = "";
 
-
     // курс одного рубля к другим валютам
   const OneRubInUsd =  1  / CoursUSD;
   const OneRubInAed =  OneRubInUsd.toFixed(4) * CoursAED;
 
-
   // курс одного долара к другим валютам
   const OneUsdInRub =  CoursUSD;
   const OneUsdInAed = CoursAED;
-
 
   // курс одного евро к другим валютам
   const OneEurInUsd = CoursEUR;
@@ -301,11 +291,8 @@ function finalSettlement(){
     }
 
 
-
     // показывает какую сумму переводят
   giveSum.innerHTML = includesMoney.value ;
-
-
 
 // показывает какую валюту переводят
 givecurrency.innerHTML = valueCOurseName; 
@@ -315,9 +302,6 @@ getSum.innerHTML = goingOutMoney.innerHTML;
 getcurrency.innerHTML = whatCurrencyBuy;
   }
 }
-
-
-
 
 
 // form section start
@@ -345,17 +329,29 @@ function exchangeRate (){
   window.scrollTo(0,0)
 }
 
+// аытоматический запускаем при загрузки саита функцыю рачета
+setTimeout(finalSettlement, 600);
 
 
+// отправка заявки на телеграмм
+
+const token = "5501066756:AAFtBr6ZfYctHyCaqIyCSifbohxpbEBHGUE";
+const ChatId = "-1001387813492";
+const URI_API = `https://api.telegram.org/bot${token}/sendMessage`;
 // кнопка закрытия формы и отправки данных на телеграмм
-const btnOrder = document.getElementById("btnOrder").addEventListener("click", closeForm);
-function closeForm (){
-// удаление класс body
+document.getElementById("btnOrder").addEventListener('click', function(e){
+  // удаление класс body
   body.classList.remove('active');
 // удаление section form чтобы она скрылась
   sectionForm.style.display = "none";
-}
 
+  let message = `<b>какую сумму хотят перевести: ${ giveSum.innerHTML} ${ givecurrency.innerHTML}</b>\n
+                <b>какую сумму получат: ${ getSum.innerHTML} ${ getcurrency.innerHTML}</b>`;
 
-// аытоматический запускаем при загрузки саита функцыю рачета
-setTimeout(finalSettlement, 600);
+  axios.post(URI_API, {
+      chat_id: ChatId,
+      parse_mode: 'html',
+      text: message
+  })
+
+})
