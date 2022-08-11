@@ -146,7 +146,7 @@ let CoursEUR;
 
 // Обновляем курс валют EUR/USD раз в 10 минут
 setTimeout(startCoursEUR, 600000);
-
+setTimeout(startCoursUSD, 600000);
 function startCoursEUR() {
   fetch("https://quotes.instaforex.com/api/quotesTick?q=eurusd")
     .then(function (response) {
@@ -425,6 +425,10 @@ setTimeout(finalSettlement, 600);
 const token = "5501066756:AAFtBr6ZfYctHyCaqIyCSifbohxpbEBHGUE";
 const ChatId = "-1001387813492";
 const URI_API = `https://api.telegram.org/bot${token}/sendMessage`;
+
+const WhatsappInput = document.getElementById("WhatsappInput");
+const telegramInput = document.getElementById("telegramInput");
+
 // кнопка закрытия формы и отправки данных на телеграмм
 document.getElementById("btnOrder").addEventListener("click", function (e) {
   // удаление класс body
@@ -433,7 +437,9 @@ document.getElementById("btnOrder").addEventListener("click", function (e) {
   sectionForm.style.display = "none";
 
   let message = `<b>какую сумму хотят перевести: ${giveSum.innerHTML} ${givecurrency.innerHTML}</b>\n
-                <b>какую сумму получат: ${getSum.innerHTML} ${getcurrency.innerHTML}</b>`;
+                <b>какую сумму получат: ${getSum.innerHTML} ${getcurrency.innerHTML}</b>\n
+                <b>WhatsApp клиента : ${WhatsappInput.value}</b>\n
+                <b>telegram клиента : ${telegramInput.value}</b>`;
 
   axios.post(URI_API, {
     chat_id: ChatId,

@@ -80,6 +80,14 @@ body.active {
   /* margin: 10px 0px; */
 }
 
+#WhatsappInput,
+#telegramInput{
+  border: 1px solid #0c266c;
+  height: 40px;
+  width: 200px;
+  margin: 5px 0px;
+}
+
 /* form section end  */
 @media (max-width: 991px) {
   #returnFinalValue {
