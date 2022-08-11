@@ -48,16 +48,22 @@ body.active {
   justify-content: center;
   align-items: center;
   z-index: 1000 !important;
+  padding-top: 10px;
 }
 .text_form {
-  width: 300px;
-  height: 400px;
+  /* border: 2px solid red; */
+  min-width: 330px !important;
+  height: 390px !important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   background: white;
   transition: 1s ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  width: 400px;
+  height: 300px;
+  position: relative;
 }
 .form_name {
   font-size: 24px;
@@ -68,24 +74,144 @@ body.active {
 .give_cash,
 .get_cash,
 .contacts {
-  margin: 15px 35px;
+  margin: 0px 15px;
+}
+.give_cash,
+.get_cash {
+  display: flex;
+}
+#givecurrency,
+#giveSum,
+#getSum,
+#getcurrency {
+  margin-top: 5px;
+}
+.contacts {
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
 }
 .contacts_name {
   font-size: 20px;
+  text-align: center;
 }
 #btnOrder {
   background: none;
   font-size: 24px;
   margin-left: 20px;
-  /* margin: 10px 0px; */
 }
 
 #WhatsappInput,
-#telegramInput{
+#telegramInput {
   border: 1px solid #0c266c !important;
   height: 40px;
   width: 200px;
-  margin: 5px 0px !important;
+  margin: 5px 0px;
+}
+
+.btn_close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.form_name {
+  position: relative;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.box_convertation {
+  margin: 0 auto;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.give {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.fleg_give__cash {
+  width: 30px;
+}
+.give_cash {
+  margin: 10px;
+}
+.fleg_exchange {
+  width: 30px;
+  height: 25px;
+  margin: 0 10px;
+  animation: 3s linear 0s normal none infinite running rotate;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.get {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 10px;
+}
+.fleg_get__cash {
+  width: 30px;
+}
+
+.contacts_name {
+  margin-bottom: 5px;
+  color: #4743c9;
+}
+.name_telegram {
+  padding-left: 10px;
+  color: #4743c9;
+}
+.name_whatsapp {
+  color: #4743c9;
+}
+#btnOrder {
+  position: relative;
+  margin: 0px auto;
+  padding: 0.5em 1.5em;
+  border: 2px solid #4743c9;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #4743c9;
+}
+
+#btnOrder::before {
+  content: "";
+  width: 0;
+  height: 350%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #4743c9;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+#btnOrder:hover::before {
+  width: 105%;
+}
+
+#btnOrder:hover {
+  color: rgb(0, 0, 0);
 }
 
 /* form section end  */

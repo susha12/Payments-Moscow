@@ -405,6 +405,9 @@ const body = document.querySelector("body");
 const sectionForm = document.getElementById("sectionForm");
 
 // кнопка обмена
+// какие флаги должны отоброжатся
+let flegGive = document.getElementById("fleg_give__cash");
+let flegGet = document.getElementById("fleg_get__cash");
 const exchangeButton = document
   .getElementById("exchangeButton")
   .addEventListener("click", exchangeRate);
@@ -415,8 +418,31 @@ function exchangeRate() {
   // добавить  section form чтобы она появилась
   sectionForm.style.display = "flex";
   window.scrollTo(0, 0);
+  flegGiveChange();
+  flegGetChange();
 }
-
+function flegGiveChange() {
+  if (givecurrency.innerHTML === "USD") {
+    flegGive.src = "assets/images/icon/form-icons/icon-usa.png";
+  } else if (givecurrency.innerHTML === "AED") {
+    flegGive.src = "assets/images/icon/form-icons/icon-dubai.png";
+  } else if (givecurrency.innerHTML === "EUR") {
+    flegGive.src = "assets/images/icon/form-icons/icon-europe.png";
+  } else if (givecurrency.innerHTML === "RUB") {
+    flegGive.src = "assets/images/icon/form-icons/icon-russia.png";
+  }
+}
+function flegGetChange() {
+  if (getcurrency.innerHTML === "USD") {
+    flegGet.src = "assets/images/icon/form-icons/icon-usa.png";
+  } else if (getcurrency.innerHTML === "AED") {
+    flegGet.src = "assets/images/icon/form-icons/icon-dubai.png";
+  } else if (getcurrency.innerHTML === "EUR") {
+    flegGet.src = "assets/images/icon/form-icons/icon-europe.png";
+  } else if (getcurrency.innerHTML === "RUB") {
+    flegGet.src = "assets/images/icon/form-icons/icon-russia.png";
+  }
+}
 // аытоматический запускаем при загрузки саита функцыю рачета
 setTimeout(finalSettlement, 600);
 
@@ -428,7 +454,15 @@ const URI_API = `https://api.telegram.org/bot${token}/sendMessage`;
 
 const WhatsappInput = document.getElementById("WhatsappInput");
 const telegramInput = document.getElementById("telegramInput");
+// закрыть форму отправки
+// какие флаги должны отоброжатся
 
+document.getElementById("close-icon").addEventListener("click", () => {
+  // удаление класс body
+  body.classList.remove("active");
+  // удаление section form чтобы она скрылась
+  sectionForm.style.display = "none";
+});
 // кнопка закрытия формы и отправки данных на телеграмм
 document.getElementById("btnOrder").addEventListener("click", function (e) {
   // удаление класс body

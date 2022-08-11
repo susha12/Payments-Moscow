@@ -32,15 +32,25 @@
     <!-- form section start -->
     <section class="" id="sectionForm">
         <div class="text_form">
+            <img src="assets/images/icon/form-icons/close-icon.png" alt="close-icon.png" id="close-icon" class="btn_close">
             <h3 class="form_name">Подтвердите пожалуйста <br> заявку на обмен</h3>
-            <div class="give_cash">Отдаю <span id="giveSum">1000</span><br>Наличные <span id="givecurrency">USD</span> </div>
-            <div class="get_cash">Получаю <span id="getSum">1000</span><br>Наличные <span id="getcurrency">AED</span> </div>
+            <div class="box_convertation">
+                <div class="give">
+                    <img src="assets/images/icon/form-icons/icon-usa.png" alt="icon fleg give cash" id="fleg_give__cash" class="fleg_give__cash">
+                    <div class="give_cash"><span id="giveSum">1000</span><br><span id="givecurrency">USD</span> </div>
+                </div>
+                <img src="assets/images/icon/form-icons/icon-exchange.png" alt="icon fleg exchange" id="fleg_exchange" class="fleg_exchange">
+                <div class="get">
+                    <img src="assets/images/icon/form-icons/icon-dubai.png" alt="icon fleg get cash" id="fleg_get__cash" class="fleg_get__cash">
+                    <div class="get_cash"><span id="getSum">1000</span><br> <span id="getcurrency">AED</span> </div>
+                </div>
+            </div>
             <div class="contacts">
                 <p class="contacts_name">Контакты</p>
                 <div class="name_telegram">Telegram <input type="text" id="telegramInput"> </div>
                 <div class="name_whatsapp">Whatsapp <input type="text" id="WhatsappInput"> </div>
             </div>
-            <button id="btnOrder">Заказать</button>
+            <button id="btnOrder">Подтвердить</button>
         </div>
     </section>
         <!-- form section end -->
