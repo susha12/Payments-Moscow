@@ -438,8 +438,8 @@ document.getElementById("btnOrder").addEventListener("click", function (e) {
 
   let message = `<b>какую сумму хотят перевести: ${giveSum.innerHTML} ${givecurrency.innerHTML}</b>\n
                 <b>какую сумму получат: ${getSum.innerHTML} ${getcurrency.innerHTML}</b>\n
-                <b>WhatsApp клиента : ${WhatsappInput.value}</b>\n
-                <b>telegram клиента : ${telegramInput.value}</b>`;
+                <b>telegram клиента : ${telegramInput.value}</b>\n
+                <b>WhatsApp клиента : ${WhatsappInput.value}</b>`;
 
   axios.post(URI_API, {
     chat_id: ChatId,
