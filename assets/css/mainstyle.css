@@ -82,10 +82,10 @@ body.active {
 
 #WhatsappInput,
 #telegramInput{
-  border: 1px solid #0c266c;
+  border: 1px solid #0c266c !important;
   height: 40px;
   width: 200px;
-  margin: 5px 0px;
+  margin: 5px 0px !important;
 }
 
 /* form section end  */
