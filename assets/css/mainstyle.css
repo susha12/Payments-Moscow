@@ -1,3 +1,13 @@
+.logo{
+  /* border: 2px solid red; */
+  height: 120px;
+  transform: scale(1.5);
+  image-rendering: pixelated;
+  margin-left: 10px;
+}
+.header-section .navbar {
+  padding: 0px 15px;
+}
 .nice-select {
   display: none !important;
 }
