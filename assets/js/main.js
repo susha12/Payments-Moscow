@@ -64,10 +64,11 @@ $(function ($) {
 
 
 
-const contactsBtn = document.querySelector('#contact')
+// добавить код в js 
+
+const contactsBtn = document.querySelector('#contactBtn')
+const contactsBox = document.querySelector('#contacts')
 contactsBtn.onclick = ()=>{
-  setTimeout(() => {
-    history.pushState('', document.title, window.location.pathname);
-  }, "500")
+  contactsBox.scrollIntoView({block: "start", behavior: "smooth"});
 
 }
