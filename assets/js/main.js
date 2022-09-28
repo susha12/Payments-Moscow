@@ -64,10 +64,10 @@ $(function ($) {
 
 
 
-// const contactsBtn = document.querySelector('#contact')
-// contactsBtn.onclick = ()=>{
-//   setTimeout(() => {
-//     history.pushState('', document.title, window.location.pathname);
-//   }, "500")
+const contactsBtn = document.querySelector('#contact')
+contactsBtn.onclick = ()=>{
+  setTimeout(() => {
+    history.pushState('', document.title, window.location.pathname);
+  }, "500")
 
-// }
+}
