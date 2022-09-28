@@ -11,6 +11,9 @@
 .nice-select {
   display: none !important;
 }
+#contactBtn{
+  cursor: pointer;
+}
 #returnFinalSix {
   display: none;
 }
